@@ -21,7 +21,8 @@ class Login extends Controller
         $this->view->render('login/index');
     }
 
-    public function run() {
+    public function run()
+    {
         $this->model->run();
     }
 }

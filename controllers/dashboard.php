@@ -19,6 +19,7 @@ class Dashboard extends Controller
             header('Location: ../login');
             exit();
         }
+        $this->view->js = array('/dashboard/js/default.js');
     }
 
     public function logout()
@@ -30,6 +31,26 @@ class Dashboard extends Controller
 
     public function index()
     {
-        $this ->view->render('dashboard/index');
-  }
+        $this->view->render('dashboard/index');
+
+    }
+
+    function xhrInsert()
+    {
+        $this->model->xhrInsert();
+    }
+
+    public function xhrGetListings()
+    {
+        echo $this->model->xhrGetListings();
+
+    }
+
+    public function xhrDeleteListing()
+    {
+        $this->model->xhrDeleteListing();
+    }
+
+
 }
+

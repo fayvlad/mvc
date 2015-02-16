@@ -10,7 +10,7 @@ class View
 {
     public function __construct()
     {
-        echo 'Это вид';
+
     }
 
     public function render($name, $noInclude = false)
