@@ -20,7 +20,7 @@ class Login_Model extends Model
         ));
 
         $data = $sth->fetchAll();
-        $count = $sth = rowCount();
+        $count = $sth->rowCount();
         if($count > 0) {
             Session::init();
             Session::set('loggedIn', true);
