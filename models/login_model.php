@@ -20,17 +20,19 @@ class Login_Model extends Model
             ':login' => $_POST['login'],
             ':password' => $_POST['password']
         ));
-
-        $data = $sth->fetchAll();
+        $data = $sth->fetch();
+       // $data = $sth->fetchAll();
         $count = $sth->rowCount();
         if ($count > 0) {
             Session::init();
+            Session::set('role', $data['role']);
             Session::set('loggedIn', true);
             header('Location: ../dashboard');
         } else {
             header('Location: ../login');
         }
     }
+
 
 
 }

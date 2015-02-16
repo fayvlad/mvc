@@ -22,12 +22,12 @@ class Dashboard extends Controller
         $this->view->js = array('/dashboard/js/default.js');
     }
 
-    public function logout()
-    {
+    public function logout() {
         Session::destroy();
-        header('Location: ../login');
+        header('Location: '.URL.'/login');
         exit();
     }
+
 
     public function index()
     {
