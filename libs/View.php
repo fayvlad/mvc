@@ -8,6 +8,8 @@
  */
 class View
 {
+    public $userList = [];
+
     public function __construct()
     {
 
@@ -23,5 +25,6 @@ class View
             require 'views/footer.php';
         }
     }
+
 }
 
