@@ -27,7 +27,6 @@ class User extends Controller
     public function index()
     {
         $this->view->userList = $this->model->userList();
-       
         $this->view->render('user/index');
     }
 
@@ -41,11 +40,23 @@ class User extends Controller
         header('Location: ' . URL . '/user');
     }
 
+
     public function edit($id)
     {
-        // будет сделано позже
+        $this->view->user = $this->model->userSingleList($id);
+        $this->view->render('user/edit');
     }
 
+    public function editSave($id)
+    {
+        $data = array();
+        $data['id'] = $id;
+        $data['login'] = $_POST['login'];
+        $data['password'] = md5($_POST['password']);
+        $data['role'] = $_POST['role'];
+        $this->model->editSave($data);
+        header('Location: ' . URL . '/user');
+    }
 
     public function delete($id)
     {

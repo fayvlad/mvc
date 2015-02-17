@@ -21,8 +21,8 @@
 <table>
     <?php foreach ($this->userList as $key => $value): ?>
     <tr>
-        <td><a href="' . URL . '/user/edit/' . $value['id'] . '">Edit</a>
-            <a href="' . URL . '/user/delete/' . $value['id'] . '">Delete</a>
+        <td><a href="<?php echo URL; ?>/user/edit/<?php echo $value['id']; ?>">Edit</a>
+            <a href="<?php echo URL; ?>/user/delete/<?php echo $value['id']; ?>">Delete</a>
         </td>
         <br>
 

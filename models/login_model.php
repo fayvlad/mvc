@@ -21,7 +21,7 @@ class Login_Model extends Model
             ':password' => $_POST['password']
         ));
         $data = $sth->fetch();
-       // $data = $sth->fetchAll();
+        // $data = $sth->fetchAll();
         $count = $sth->rowCount();
         if ($count > 0) {
             Session::init();
@@ -32,7 +32,6 @@ class Login_Model extends Model
             header('Location: ../login');
         }
     }
-
 
 
 }
