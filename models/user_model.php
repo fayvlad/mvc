@@ -30,7 +30,12 @@ class User_Model extends Model
     public function editSave($data)
     {
         $sth = $this->db->prepare('UPDATE users SET `login` = :login, `password` = :password, `role` = :role WHERE id = :id');
-        $sth->execute(array(':id' => $data['id'],':login' => $data['login'], ':password' => md5($data['password']), ':role' => $data['role']));
+        $sth->execute(array(
+                ':id' => $data['id'],
+                ':login' => $data['login'],
+                ':password' => md5($data['password']),
+                ':role' => $data['role']
+            ));
     }
 
     public function userSingleList($id)

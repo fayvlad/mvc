@@ -16,7 +16,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+.gitignore
+.idea
 # =========================
 # Operating System Files
 # =========================
